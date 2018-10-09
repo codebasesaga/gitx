@@ -177,8 +177,10 @@ NSString *PBGitRepositoryDocumentType = @"Git Repository";
 
 - (void)handleGitXScriptingArguments:(NSArray *)arguments
 {
-	if (![arguments count])
+	if ([arguments count] <= 0) {
+		[self.windowController showHistoryView:self];
 		return;
+	}
 
 	NSString *firstArgument = [arguments objectAtIndex:0];
 
@@ -186,20 +188,25 @@ NSString *PBGitRepositoryDocumentType = @"Git Repository";
 		[PBGitDefaults setShowStageView:YES];
 		[self.windowController showCommitView:self];
 		return;
+	} else {
+		[self.windowController showHistoryView:self];
 	}
 
 	if ([firstArgument isEqualToString:@"--all"]) {
 		[self handleBranchFilterEventForFilter:kGitXAllBranchesFilter additionalArguments:arguments];
+		[self.windowController showCommitView:self];
 		return;
 	}
 
 	if ([firstArgument isEqualToString:@"--local"]) {
 		[self handleBranchFilterEventForFilter:kGitXLocalRemoteBranchesFilter additionalArguments:arguments];
+		[self.windowController showCommitView:self];
 		return;
 	}
 
 	if ([firstArgument isEqualToString:@"--branch"]) {
 		[self handleBranchFilterEventForFilter:kGitXSelectedBranchFilter additionalArguments:arguments];
+		[self.windowController showCommitView:self];
 		return;
 	}
 
