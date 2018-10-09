@@ -472,7 +472,6 @@
 				4A90A72B14A9C12F00D0DA02 /* README.markdown */,
 				4A5D762114A9A9CC00DF6C68 /* Sources */,
 				4A5D757C14A9A90500DF6C68 /* Resources */,
-				37A5656C1EAD077400CA0332 /* gitx (CLI) */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				630A132F215EB3A000A14FA3 /* libcrypto.1.0.0.dylib */,
 				630A132E215EB3A000A14FA3 /* libssl.1.0.0.dylib */,
@@ -504,14 +503,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		37A5656C1EAD077400CA0332 /* gitx (CLI) */ = {
+		37A5656C1EAD077400CA0332 /* CLI */ = {
 			isa = PBXGroup;
 			children = (
 				4A5D768614A9A9CC00DF6C68 /* GitX.m */,
 				4A90A73314A9D1E800D0DA02 /* GitX.h */,
 			);
-			name = "gitx (CLI)";
-			path = Sources;
+			name = CLI;
 			sourceTree = "<group>";
 		};
 		4A5D757C14A9A90500DF6C68 /* Resources */ = {
@@ -591,6 +589,7 @@
 		4A5D762114A9A9CC00DF6C68 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				37A5656C1EAD077400CA0332 /* CLI */,
 				4A5D762514A9A9CC00DF6C68 /* Controllers */,
 				4A5D764D14A9A9CC00DF6C68 /* git */,
 				4A5D768814A9A9CC00DF6C68 /* GitXRelativeDateFormatter.h */,

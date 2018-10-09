@@ -146,12 +146,11 @@
                                 <menu key="submenu" title="Copy As" id="RnK-23-C6S">
                                     <items>
                                         <menuItem title="Short SHA" keyEquivalent="c" id="Z5d-Br-R3f">
-                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
                                                 <action selector="copyShortName:" target="-1" id="xNJ-mK-bok"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Full SHA" keyEquivalent="C" id="ga6-fl-0Fb">
+                                        <menuItem title="Full SHA" keyEquivalent="c" id="ga6-fl-0Fb">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
                                                 <action selector="copySHA:" target="-1" id="U5K-pv-qz0"/>
@@ -169,11 +168,6 @@
                             <menuItem title="Paste" keyEquivalent="v" id="171">
                                 <connections>
                                     <action selector="paste:" target="-1" id="176"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Delete" id="164">
-                                <connections>
-                                    <action selector="delete:" target="-1" id="195"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Select All" keyEquivalent="a" id="172">

@@ -378,6 +378,7 @@
 {
 	[searchController selectNextResult];
 }
+
 - (IBAction)selectPrevious:(id)sender
 {
 	[searchController selectPreviousResult];
@@ -385,7 +386,7 @@
 
 - (IBAction) copy:(id)sender
 {
-	[GitXCommitCopier putStringToPasteboard:[GitXCommitCopier toSHAAndHeadingString:commitController.selectedObjects]];
+	[GitXCommitCopier putStringToPasteboard:[GitXCommitCopier toShortName:commitController.selectedObjects]];
 }
 
 - (IBAction) copySHA:(id)sender
@@ -426,7 +427,7 @@
 	return commitList;
 }
 
-- (void) scrollSelectionToTopOfViewFrom:(NSInteger)oldIndex
+- (void)scrollSelectionToTopOfViewFrom:(NSInteger)oldIndex
 {
 	if (oldIndex == NSNotFound)
 		oldIndex = 0;
@@ -450,7 +451,7 @@
     commitList.useAdjustScroll = NO;
 }
 
-- (NSArray *) selectedObjectsForOID:(GTOID *)commitOID
+- (NSArray *)selectedObjectsForOID:(GTOID *)commitOID
 {
 	NSPredicate *selection = [NSPredicate predicateWithFormat:@"OID == %@", commitOID];
 	NSArray *selectionCommits = [[commitController content] filteredArrayUsingPredicate:selection];
