@@ -20,7 +20,6 @@
 #import "PBGitDefaults.h"
 #import "PBHistorySearchController.h"
 #import "PBGitRepositoryWatcher.h"
-#import "PBQLTextView.h"
 #import "GLFileView.h"
 #import "GitXCommitCopier.h"
 #import "NSSplitView+GitX.h"
@@ -380,22 +379,10 @@
 // a file make sure to call the Find panel's action method instead.
 - (IBAction)selectNext:(id)sender
 {
-	NSResponder *firstResponder = [[[self view] window] firstResponder];
-	if ([firstResponder isKindOfClass:[PBQLTextView class]]) {
-		[(PBQLTextView *)firstResponder performFindPanelAction:sender];
-		return;
-	}
-
 	[searchController selectNextResult];
 }
 - (IBAction)selectPrevious:(id)sender
 {
-	NSResponder *firstResponder = [[[self view] window] firstResponder];
-	if ([firstResponder isKindOfClass:[PBQLTextView class]]) {
-		[(PBQLTextView *)firstResponder performFindPanelAction:sender];
-		return;
-	}
-
 	[searchController selectPreviousResult];
 }
 

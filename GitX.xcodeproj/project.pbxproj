@@ -25,7 +25,6 @@
 		2682AABB1929140E00271A4D /* GTOID+JavaScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 2682AABA1929140E00271A4D /* GTOID+JavaScript.m */; };
 		373F9A201EAF97A200A77B4C /* NSSplitView+GitX.m in Sources */ = {isa = PBXBuildFile; fileRef = 373F9A1F1EAF97A200A77B4C /* NSSplitView+GitX.m */; };
 		37A5657D1EAD096300CA0332 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A5657C1EAD096300CA0332 /* Quartz.framework */; };
-		4A1F4E6917AFE969004D51E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
 		4A2125A417C0C78A00B5B582 /* NSColor+RGB.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2125A317C0C78A00B5B582 /* NSColor+RGB.m */; };
 		4A40159714067B6300DB9C07 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A40159614067B6300DB9C07 /* CoreFoundation.framework */; };
 		4A40159914067B7A00DB9C07 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A40159814067B7A00DB9C07 /* AppKit.framework */; };
@@ -34,7 +33,6 @@
 		4A5D75F114A9A90500DF6C68 /* rewindImage.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D75AF14A9A90500DF6C68 /* rewindImage.pdf */; };
 		4A5D75F714A9A90500DF6C68 /* source.css in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D75B514A9A90500DF6C68 /* source.css */; };
 		4A5D75F914A9A90500DF6C68 /* UpdateKey.pem in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D75B714A9A90500DF6C68 /* UpdateKey.pem */; };
-		4A5D75FB14A9A90500DF6C68 /* OpenRecentPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D75BA14A9A90500DF6C68 /* OpenRecentPopup.xib */; };
 		4A5D75FC14A9A90500DF6C68 /* PBCommitHookFailedSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D75BB14A9A90500DF6C68 /* PBCommitHookFailedSheet.xib */; };
 		4A5D75FD14A9A90500DF6C68 /* PBDiffWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D75BC14A9A90500DF6C68 /* PBDiffWindow.xib */; };
 		4A5D75FE14A9A90500DF6C68 /* PBGitCommitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D75BD14A9A90500DF6C68 /* PBGitCommitView.xib */; };
@@ -105,7 +103,6 @@
 		4A5D772414A9A9CC00DF6C68 /* GitXTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76B514A9A9CC00DF6C68 /* GitXTextFieldCell.m */; };
 		4A5D772514A9A9CC00DF6C68 /* GLFileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76B714A9A9CC00DF6C68 /* GLFileView.m */; };
 		4A5D772614A9A9CC00DF6C68 /* PBAddRemoteSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76B914A9A9CC00DF6C68 /* PBAddRemoteSheet.m */; };
-		4A5D772714A9A9CC00DF6C68 /* PBCloneRepositoryPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76BB14A9A9CC00DF6C68 /* PBCloneRepositoryPanel.m */; };
 		4A5D772A14A9A9CC00DF6C68 /* PBCommitHookFailedSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76C114A9A9CC00DF6C68 /* PBCommitHookFailedSheet.m */; };
 		4A5D772B14A9A9CC00DF6C68 /* PBCommitMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76C314A9A9CC00DF6C68 /* PBCommitMessageView.m */; };
 		4A5D772C14A9A9CC00DF6C68 /* PBCreateBranchSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76C514A9A9CC00DF6C68 /* PBCreateBranchSheet.m */; };
@@ -115,14 +112,11 @@
 		4A5D773014A9A9CC00DF6C68 /* PBGitRevisionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76CD14A9A9CC00DF6C68 /* PBGitRevisionCell.m */; };
 		4A5D773114A9A9CC00DF6C68 /* PBGitXMessageSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76CF14A9A9CC00DF6C68 /* PBGitXMessageSheet.m */; };
 		4A5D773214A9A9CC00DF6C68 /* PBIconAndTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76D114A9A9CC00DF6C68 /* PBIconAndTextCell.m */; };
-		4A5D773414A9A9CC00DF6C68 /* PBQLOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76D514A9A9CC00DF6C68 /* PBQLOutlineView.m */; };
-		4A5D773514A9A9CC00DF6C68 /* PBQLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76D714A9A9CC00DF6C68 /* PBQLTextView.m */; };
 		4A5D773614A9A9CC00DF6C68 /* PBRefMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76D914A9A9CC00DF6C68 /* PBRefMenuItem.m */; };
 		4A5D773714A9A9CC00DF6C68 /* PBRemoteProgressSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76DB14A9A9CC00DF6C68 /* PBRemoteProgressSheet.m */; };
 		4A5D773814A9A9CC00DF6C68 /* PBSourceViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76DD14A9A9CC00DF6C68 /* PBSourceViewCell.m */; };
 		4A5D773914A9A9CC00DF6C68 /* PBSourceViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76DF14A9A9CC00DF6C68 /* PBSourceViewItem.m */; };
-		4A5D773A14A9A9F600DF6C68 /* gitx.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D768614A9A9CC00DF6C68 /* gitx.m */; };
-		4A5D773B14A9A9F900DF6C68 /* gitx_askpasswd_main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D768714A9A9CC00DF6C68 /* gitx_askpasswd_main.m */; };
+		4A5D773A14A9A9F600DF6C68 /* GitX.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D768614A9A9CC00DF6C68 /* GitX.m */; };
 		4A5D777314A9AEB000DF6C68 /* PBSourceViewAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D776D14A9AEB000DF6C68 /* PBSourceViewAction.m */; };
 		4A5D777414A9AEB000DF6C68 /* PBSourceViewBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D776F14A9AEB000DF6C68 /* PBSourceViewBadge.m */; };
 		4A5D777514A9AEB000DF6C68 /* PBSourceViewRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D777214A9AEB000DF6C68 /* PBSourceViewRemote.m */; };
@@ -130,13 +124,11 @@
 		4AB057E31652652000DE751D /* PBRepositoryFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB057E21652652000DE751D /* PBRepositoryFinder.m */; };
 		4AB057E41652652000DE751D /* PBRepositoryFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB057E21652652000DE751D /* PBRepositoryFinder.m */; };
 		4AB71FF814B7EDD400F1DFFC /* RJModalRepoSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB71FF714B7EDD400F1DFFC /* RJModalRepoSheet.m */; };
-		4AC42F7D16BFBADA007CCA3A /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A40159814067B7A00DB9C07 /* AppKit.framework */; };
 		4D3FB3E7198AEAAF000B4A58 /* PBGitRepositoryDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3FB3E6198AEAAF000B4A58 /* PBGitRepositoryDocument.m */; };
 		4D6E4F7A1E56851A004C3A6F /* PBMacros.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6E4F781E56851A004C3A6F /* PBMacros.m */; };
 		4D843B1F1E5D27C3004C3A6F /* PBTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D843B1E1E5D27C3004C3A6F /* PBTask.m */; };
 		4D843B401E5E3939004C3A6F /* PBGitRepository_PBGitBinarySupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D843B3F1E5E3939004C3A6F /* PBGitRepository_PBGitBinarySupport.m */; };
 		4DECFBB21E662962004C3A6F /* ObjectiveGit+PBCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DECFBB11E662962004C3A6F /* ObjectiveGit+PBCategories.m */; };
-		551BF176112F3F4B00265053 /* gitx_askpasswd in Resources */ = {isa = PBXBuildFile; fileRef = 551BF111112F371800265053 /* gitx_askpasswd */; };
 		630A1330215EB3A000A14FA3 /* libssl.1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 630A132E215EB3A000A14FA3 /* libssl.1.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		630A1331215EB3A000A14FA3 /* libcrypto.1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 630A132F215EB3A000A14FA3 /* libcrypto.1.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		630A1336215F972B00A14FA3 /* ObjectiveGit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63663D73215D408300FBAA0A /* ObjectiveGit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -204,13 +196,6 @@
 			remoteGlobalIDString = 4D3F252B18C37D2E000922D9;
 			remoteInfo = "Generate Scripting Header";
 		};
-		551BF174112F3F3500265053 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 551BF110112F371800265053;
-			remoteInfo = gitx_askpasswd;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -248,7 +233,6 @@
 		4A5D75B414A9A90500DF6C68 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A5D75B514A9A90500DF6C68 /* source.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = source.css; sourceTree = "<group>"; };
 		4A5D75B714A9A90500DF6C68 /* UpdateKey.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UpdateKey.pem; sourceTree = "<group>"; };
-		4A5D75BA14A9A90500DF6C68 /* OpenRecentPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenRecentPopup.xib; sourceTree = "<group>"; };
 		4A5D75BB14A9A90500DF6C68 /* PBCommitHookFailedSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBCommitHookFailedSheet.xib; sourceTree = "<group>"; };
 		4A5D75BC14A9A90500DF6C68 /* PBDiffWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBDiffWindow.xib; sourceTree = "<group>"; };
 		4A5D75BD14A9A90500DF6C68 /* PBGitCommitView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PBGitCommitView.xib; sourceTree = "<group>"; };
@@ -337,8 +321,8 @@
 		4A5D768214A9A9CC00DF6C68 /* PBError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBError.m; sourceTree = "<group>"; };
 		4A5D768314A9A9CC00DF6C68 /* PBGitXProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBGitXProtocol.h; sourceTree = "<group>"; };
 		4A5D768414A9A9CC00DF6C68 /* PBGitXProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBGitXProtocol.m; sourceTree = "<group>"; };
-		4A5D768614A9A9CC00DF6C68 /* gitx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gitx.m; sourceTree = "<group>"; };
-		4A5D768714A9A9CC00DF6C68 /* gitx_askpasswd_main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gitx_askpasswd_main.m; sourceTree = "<group>"; };
+		4A5D768614A9A9CC00DF6C68 /* GitX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GitX.m; path = ../Sources/GitX.m; sourceTree = "<group>"; };
+		4A5D768714A9A9CC00DF6C68 /* gitx_askpasswd_main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = gitx_askpasswd_main.m; path = ../Sources/gitx_askpasswd_main.m; sourceTree = "<group>"; };
 		4A5D768814A9A9CC00DF6C68 /* GitXRelativeDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitXRelativeDateFormatter.h; sourceTree = "<group>"; };
 		4A5D768914A9A9CC00DF6C68 /* GitXRelativeDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitXRelativeDateFormatter.m; sourceTree = "<group>"; };
 		4A5D768A14A9A9CC00DF6C68 /* GitXScriptingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitXScriptingConstants.h; sourceTree = "<group>"; };
@@ -373,8 +357,6 @@
 		4A5D76B714A9A9CC00DF6C68 /* GLFileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GLFileView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4A5D76B814A9A9CC00DF6C68 /* PBAddRemoteSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBAddRemoteSheet.h; sourceTree = "<group>"; };
 		4A5D76B914A9A9CC00DF6C68 /* PBAddRemoteSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBAddRemoteSheet.m; sourceTree = "<group>"; };
-		4A5D76BA14A9A9CC00DF6C68 /* PBCloneRepositoryPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBCloneRepositoryPanel.h; sourceTree = "<group>"; };
-		4A5D76BB14A9A9CC00DF6C68 /* PBCloneRepositoryPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBCloneRepositoryPanel.m; sourceTree = "<group>"; };
 		4A5D76C014A9A9CC00DF6C68 /* PBCommitHookFailedSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBCommitHookFailedSheet.h; sourceTree = "<group>"; };
 		4A5D76C114A9A9CC00DF6C68 /* PBCommitHookFailedSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBCommitHookFailedSheet.m; sourceTree = "<group>"; };
 		4A5D76C214A9A9CC00DF6C68 /* PBCommitMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBCommitMessageView.h; sourceTree = "<group>"; };
@@ -393,10 +375,6 @@
 		4A5D76CF14A9A9CC00DF6C68 /* PBGitXMessageSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBGitXMessageSheet.m; sourceTree = "<group>"; };
 		4A5D76D014A9A9CC00DF6C68 /* PBIconAndTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBIconAndTextCell.h; sourceTree = "<group>"; };
 		4A5D76D114A9A9CC00DF6C68 /* PBIconAndTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBIconAndTextCell.m; sourceTree = "<group>"; };
-		4A5D76D414A9A9CC00DF6C68 /* PBQLOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBQLOutlineView.h; sourceTree = "<group>"; };
-		4A5D76D514A9A9CC00DF6C68 /* PBQLOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBQLOutlineView.m; sourceTree = "<group>"; };
-		4A5D76D614A9A9CC00DF6C68 /* PBQLTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBQLTextView.h; sourceTree = "<group>"; };
-		4A5D76D714A9A9CC00DF6C68 /* PBQLTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBQLTextView.m; sourceTree = "<group>"; };
 		4A5D76D814A9A9CC00DF6C68 /* PBRefMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBRefMenuItem.h; sourceTree = "<group>"; };
 		4A5D76D914A9A9CC00DF6C68 /* PBRefMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBRefMenuItem.m; sourceTree = "<group>"; };
 		4A5D76DA14A9A9CC00DF6C68 /* PBRemoteProgressSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBRemoteProgressSheet.h; sourceTree = "<group>"; };
@@ -428,10 +406,8 @@
 		4D843B1E1E5D27C3004C3A6F /* PBTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBTask.m; sourceTree = "<group>"; };
 		4D843B3E1E5E3939004C3A6F /* PBGitRepository_PBGitBinarySupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBGitRepository_PBGitBinarySupport.h; sourceTree = "<group>"; };
 		4D843B3F1E5E3939004C3A6F /* PBGitRepository_PBGitBinarySupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBGitRepository_PBGitBinarySupport.m; sourceTree = "<group>"; };
-		4DC1853818E6F93200E8DB8F /* Info-gitx.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-gitx.plist"; path = "../Resources/Info-gitx.plist"; sourceTree = "<group>"; };
 		4DECFBB01E662962004C3A6F /* ObjectiveGit+PBCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ObjectiveGit+PBCategories.h"; sourceTree = "<group>"; };
 		4DECFBB11E662962004C3A6F /* ObjectiveGit+PBCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ObjectiveGit+PBCategories.m"; sourceTree = "<group>"; };
-		551BF111112F371800265053 /* gitx_askpasswd */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = gitx_askpasswd; sourceTree = BUILT_PRODUCTS_DIR; };
 		630A132E215EB3A000A14FA3 /* libssl.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.1.0.0.dylib; path = /usr/local/Cellar/openssl/1.0.2p/lib/libssl.1.0.0.dylib; sourceTree = "<absolute>"; };
 		630A132F215EB3A000A14FA3 /* libcrypto.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.1.0.0.dylib; path = /usr/local/Cellar/openssl/1.0.2p/lib/libcrypto.1.0.0.dylib; sourceTree = "<absolute>"; };
 		63663D73215D408300FBAA0A /* ObjectiveGit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectiveGit.framework; path = Carthage/Build/Mac/ObjectiveGit.framework; sourceTree = "<group>"; };
@@ -493,15 +469,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		551BF10F112F371800265053 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4AC42F7D16BFBADA007CCA3A /* AppKit.framework in Frameworks */,
-				4A1F4E6917AFE969004D51E9 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8D11072E0486CEB800E47090 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -537,7 +504,6 @@
 			children = (
 				8D1107320486CEB800E47090 /* GitX.app */,
 				913D5E490E55644600CECEA2 /* gitx */,
-				551BF111112F371800265053 /* gitx_askpasswd */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -546,9 +512,9 @@
 			isa = PBXGroup;
 			children = (
 				4A90A72B14A9C12F00D0DA02 /* README.markdown */,
-				4A5D762114A9A9CC00DF6C68 /* Classes */,
+				4A5D762114A9A9CC00DF6C68 /* Sources */,
 				4A5D757C14A9A90500DF6C68 /* Resources */,
-				37A5656C1EAD077400CA0332 /* cli tool */,
+				37A5656C1EAD077400CA0332 /* gitx (CLI) */,
 				37A5656D1EAD07C200CA0332 /* gitx_askpasswd */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				630A132F215EB3A000A14FA3 /* libcrypto.1.0.0.dylib */,
@@ -581,15 +547,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		37A5656C1EAD077400CA0332 /* cli tool */ = {
+		37A5656C1EAD077400CA0332 /* gitx (CLI) */ = {
 			isa = PBXGroup;
 			children = (
-				4A5D768614A9A9CC00DF6C68 /* gitx.m */,
+				4A5D768614A9A9CC00DF6C68 /* GitX.m */,
 				4A90A73314A9D1E800D0DA02 /* GitX.h */,
-				4DC1853818E6F93200E8DB8F /* Info-gitx.plist */,
 			);
-			name = "cli tool";
-			path = Classes;
+			name = "gitx (CLI)";
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		37A5656D1EAD07C200CA0332 /* gitx_askpasswd */ = {
@@ -598,7 +563,7 @@
 				4A5D768714A9A9CC00DF6C68 /* gitx_askpasswd_main.m */,
 			);
 			name = gitx_askpasswd;
-			path = Classes;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		4A5D757C14A9A90500DF6C68 /* Resources */ = {
@@ -652,7 +617,6 @@
 		4A5D75B914A9A90500DF6C68 /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
-				4A5D75BA14A9A90500DF6C68 /* OpenRecentPopup.xib */,
 				4A5D75BB14A9A90500DF6C68 /* PBCommitHookFailedSheet.xib */,
 				4A5D75BC14A9A90500DF6C68 /* PBDiffWindow.xib */,
 				4A5D75BD14A9A90500DF6C68 /* PBGitCommitView.xib */,
@@ -678,7 +642,7 @@
 			path = English.lproj;
 			sourceTree = "<group>";
 		};
-		4A5D762114A9A9CC00DF6C68 /* Classes */ = {
+		4A5D762114A9A9CC00DF6C68 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				4A5D762514A9A9CC00DF6C68 /* Controllers */,
@@ -708,7 +672,7 @@
 				4D6E4F781E56851A004C3A6F /* PBMacros.m */,
 				4D6E4F791E56851A004C3A6F /* PBMacros.h */,
 			);
-			path = Classes;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		4A5D762514A9A9CC00DF6C68 /* Controllers */ = {
@@ -864,8 +828,6 @@
 				4A5D76B714A9A9CC00DF6C68 /* GLFileView.m */,
 				4A5D76B814A9A9CC00DF6C68 /* PBAddRemoteSheet.h */,
 				4A5D76B914A9A9CC00DF6C68 /* PBAddRemoteSheet.m */,
-				4A5D76BA14A9A9CC00DF6C68 /* PBCloneRepositoryPanel.h */,
-				4A5D76BB14A9A9CC00DF6C68 /* PBCloneRepositoryPanel.m */,
 				4A5D76C014A9A9CC00DF6C68 /* PBCommitHookFailedSheet.h */,
 				4A5D76C114A9A9CC00DF6C68 /* PBCommitHookFailedSheet.m */,
 				4A5D76C214A9A9CC00DF6C68 /* PBCommitMessageView.h */,
@@ -884,10 +846,6 @@
 				4A5D76CF14A9A9CC00DF6C68 /* PBGitXMessageSheet.m */,
 				4A5D76D014A9A9CC00DF6C68 /* PBIconAndTextCell.h */,
 				4A5D76D114A9A9CC00DF6C68 /* PBIconAndTextCell.m */,
-				4A5D76D414A9A9CC00DF6C68 /* PBQLOutlineView.h */,
-				4A5D76D514A9A9CC00DF6C68 /* PBQLOutlineView.m */,
-				4A5D76D614A9A9CC00DF6C68 /* PBQLTextView.h */,
-				4A5D76D714A9A9CC00DF6C68 /* PBQLTextView.m */,
 				4A5D76D814A9A9CC00DF6C68 /* PBRefMenuItem.h */,
 				4A5D76D914A9A9CC00DF6C68 /* PBRefMenuItem.m */,
 				4A5D76DA14A9A9CC00DF6C68 /* PBRemoteProgressSheet.h */,
@@ -910,22 +868,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		551BF110112F371800265053 /* gitx_askpasswd */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 551BF119112F373E00265053 /* Build configuration list for PBXNativeTarget "gitx_askpasswd" */;
-			buildPhases = (
-				551BF10E112F371800265053 /* Sources */,
-				551BF10F112F371800265053 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = gitx_askpasswd;
-			productName = gitx_askpasswd;
-			productReference = 551BF111112F371800265053 /* gitx_askpasswd */;
-			productType = "com.apple.product-type.tool";
-		};
 		8D1107260486CEB800E47090 /* GitX */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 26FC0A840875C7B200E6366F /* Build configuration list for PBXNativeTarget "GitX" */;
@@ -942,7 +884,6 @@
 			dependencies = (
 				4D3F253118C37D9A000922D9 /* PBXTargetDependency */,
 				4A774CBD142F464D00E158CC /* PBXTargetDependency */,
-				551BF175112F3F3500265053 /* PBXTargetDependency */,
 			);
 			name = GitX;
 			productInstallPath = "$(HOME)/Applications";
@@ -1003,7 +944,6 @@
 			targets = (
 				8D1107260486CEB800E47090 /* GitX */,
 				913D5E480E55644600CECEA2 /* cli tool */,
-				551BF110112F371800265053 /* gitx_askpasswd */,
 				4D3F252B18C37D2E000922D9 /* Generate Scripting Header */,
 			);
 		};
@@ -1016,7 +956,6 @@
 			files = (
 				913D5E500E55645900CECEA2 /* gitx in Resources */,
 				BFFCB5471E3EFA9F00E0B254 /* Images.xcassets in Resources */,
-				551BF176112F3F4B00265053 /* gitx_askpasswd in Resources */,
 				978357C5189C238300ADC689 /* DetailViewTemplate.pdf in Resources */,
 				978357C2189C1F5700ADC689 /* MergeTemplate.pdf in Resources */,
 				978357A7189C05B100ADC689 /* FolderTemplate.pdf in Resources */,
@@ -1035,7 +974,6 @@
 				4A5D75F914A9A90500DF6C68 /* UpdateKey.pem in Resources */,
 				978357C1189C1F5700ADC689 /* CherryPickTemplate.pdf in Resources */,
 				978357C7189C23AF00ADC689 /* TreeViewTemplate.pdf in Resources */,
-				4A5D75FB14A9A90500DF6C68 /* OpenRecentPopup.xib in Resources */,
 				4A5D75FC14A9A90500DF6C68 /* PBCommitHookFailedSheet.xib in Resources */,
 				978357AD189C074500ADC689 /* BranchTemplate.pdf in Resources */,
 				4A5D75FD14A9A90500DF6C68 /* PBDiffWindow.xib in Resources */,
@@ -1119,14 +1057,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		551BF10E112F371800265053 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4A5D773B14A9A9F900DF6C68 /* gitx_askpasswd_main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8D11072C0486CEB800E47090 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1195,7 +1125,6 @@
 				4A5D772414A9A9CC00DF6C68 /* GitXTextFieldCell.m in Sources */,
 				4A5D772514A9A9CC00DF6C68 /* GLFileView.m in Sources */,
 				4A5D772614A9A9CC00DF6C68 /* PBAddRemoteSheet.m in Sources */,
-				4A5D772714A9A9CC00DF6C68 /* PBCloneRepositoryPanel.m in Sources */,
 				4A5D772A14A9A9CC00DF6C68 /* PBCommitHookFailedSheet.m in Sources */,
 				4A5D772B14A9A9CC00DF6C68 /* PBCommitMessageView.m in Sources */,
 				4A5D772C14A9A9CC00DF6C68 /* PBCreateBranchSheet.m in Sources */,
@@ -1207,8 +1136,6 @@
 				4A5D773114A9A9CC00DF6C68 /* PBGitXMessageSheet.m in Sources */,
 				4A5D773214A9A9CC00DF6C68 /* PBIconAndTextCell.m in Sources */,
 				4D843B401E5E3939004C3A6F /* PBGitRepository_PBGitBinarySupport.m in Sources */,
-				4A5D773414A9A9CC00DF6C68 /* PBQLOutlineView.m in Sources */,
-				4A5D773514A9A9CC00DF6C68 /* PBQLTextView.m in Sources */,
 				4A5D773614A9A9CC00DF6C68 /* PBRefMenuItem.m in Sources */,
 				4A5D773714A9A9CC00DF6C68 /* PBRemoteProgressSheet.m in Sources */,
 				4A5D773814A9A9CC00DF6C68 /* PBSourceViewCell.m in Sources */,
@@ -1231,7 +1158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A5D773A14A9A9F600DF6C68 /* gitx.m in Sources */,
+				4A5D773A14A9A9F600DF6C68 /* GitX.m in Sources */,
 				4AB057E41652652000DE751D /* PBRepositoryFinder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1253,11 +1180,6 @@
 			isa = PBXTargetDependency;
 			target = 4D3F252B18C37D2E000922D9 /* Generate Scripting Header */;
 			targetProxy = 4D3F253218C37D9F000922D9 /* PBXContainerItemProxy */;
-		};
-		551BF175112F3F3500265053 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 551BF110112F371800265053 /* gitx_askpasswd */;
-			targetProxy = 551BF174112F3F3500265053 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1483,42 +1405,12 @@
 			};
 			name = Release;
 		};
-		551BF113112F371800265053 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INSTALL_PATH = /usr/local/bin;
-				PRODUCT_NAME = gitx_askpasswd;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		551BF114112F371800265053 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_PREFIX_HEADER = $PROJECT_TEMP_DIR/revision;
-				INFOPLIST_PREPROCESS = YES;
-				INSTALL_PATH = /usr/local/bin;
-				PRODUCT_NAME = gitx_askpasswd;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		551BF115112F371800265053 /* Install */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INSTALL_PATH = /usr/local/bin;
-				PRODUCT_NAME = gitx_askpasswd;
-				SKIP_INSTALL = YES;
-			};
-			name = Install;
-		};
 		913D5E4B0E55644600CECEA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Resources/GitX_Prefix.pch;
-				INFOPLIST_FILE = "Resources/Info-gitx.plist";
 				INSTALL_PATH = /usr/local/bin;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.phere.gitx-cli";
 				PRODUCT_NAME = gitx;
@@ -1532,7 +1424,6 @@
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Resources/GitX_Prefix.pch;
-				INFOPLIST_FILE = "Resources/Info-gitx.plist";
 				INSTALL_PATH = /usr/local/bin;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.phere.gitx-cli";
 				PRODUCT_NAME = gitx;
@@ -1567,16 +1458,6 @@
 			buildConfigurations = (
 				4D3F252D18C37D2E000922D9 /* Debug */,
 				4D3F252E18C37D2E000922D9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		551BF119112F373E00265053 /* Build configuration list for PBXNativeTarget "gitx_askpasswd" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				551BF113112F371800265053 /* Debug */,
-				551BF114112F371800265053 /* Release */,
-				551BF115112F371800265053 /* Install */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -14,7 +14,6 @@
 #import "PBGitXProtocol.h"
 #import "PBNSURLPathUserDefaultsTransfomer.h"
 #import "PBGitDefaults.h"
-#import "PBCloneRepositoryPanel.h"
 #import "OpenRecentController.h"
 #import "PBGitBinary.h"
 #import "PBGitRepositoryDocument.h"
@@ -33,11 +32,11 @@ static OpenRecentController* recentsDialog = nil;
 	[NSApp activateIgnoringOtherApps:YES];
 #endif
 
-	if(!(self = [super init]))
+	if (!(self = [super init]))
 		return nil;
 
 	/* Value Transformers */
-	NSValueTransformer *transformer = [[PBNSURLPathUserDefaultsTransfomer alloc] init];
+	NSValueTransformer *transformer = [PBNSURLPathUserDefaultsTransfomer new];
 	[NSValueTransformer setValueTransformer:transformer forName:@"PBNSURLPathUserDefaultsTransfomer"];
 	
 	// Make sure the PBGitDefaults is initialized, by calling a random method
@@ -73,13 +72,12 @@ static OpenRecentController* recentsDialog = nil;
 	NSScriptCommand *command = [NSScriptCommand currentCommand];
 	for (NSString * filename in filenames) {
 		NSURL * repository = [NSURL fileURLWithPath:filename];
-		[controller openDocumentWithContentsOfURL:repository display:YES completionHandler:^void (NSDocument *_document, BOOL documentWasAlreadyOpen, NSError *error) {
+		[controller openDocumentWithContentsOfURL:repository display:YES completionHandler:^(NSDocument *_document, BOOL documentWasAlreadyOpen, NSError *error) {
 			if (!_document) {
 				NSLog(@"Error opening repository \"%@\": %@", repository.path, error);
 				[controller presentError:error];
 				[sender replyToOpenOrPrint:NSApplicationDelegateReplyFailure];
-			}
-			else {
+			} else {
 				[sender replyToOpenOrPrint:NSApplicationDelegateReplySuccess];
 			}
 
@@ -100,40 +98,13 @@ static OpenRecentController* recentsDialog = nil;
 	}
 }
 
-- (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender
-{
-	if(!started || [[[NSDocumentController sharedDocumentController] documents] count])
-		return NO;
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
 	return YES;
 }
 
-- (BOOL)applicationOpenUntitledFile:(NSApplication *)theApplication
-{
-	recentsDialog = [[OpenRecentController alloc] init];
-	if ([recentsDialog.possibleResults count] > 0)
-	{
-		[recentsDialog show];
-		return YES;
-	}
-	else
-	{
-		return NO;
-	}
-}
-
-- (void)applicationDidFinishLaunching:(NSNotification*)notification
-{
-	// Make sure Git's SSH password requests get forwarded to our little UI tool:
-	setenv( "SSH_ASKPASS", [[[NSBundle mainBundle] pathForResource: @"gitx_askpasswd" ofType: @""] UTF8String], 1 );
-	setenv( "DISPLAY", "localhost:0", 1 );
-
+- (void)applicationDidFinishLaunching:(NSNotification*)notification {
 	[self registerServices];
 	started = YES;
-}
-
-- (void) windowWillClose: sender
-{
-	[firstResponder terminate: sender];
 }
 
 //Override the default behavior
@@ -171,33 +142,5 @@ static OpenRecentController* recentsDialog = nil;
 
 	[NSApp orderFrontStandardAboutPanelWithOptions:dict];
 }
-
-- (IBAction) showCloneRepository:(id)sender
-{
-	if (!cloneRepositoryPanel)
-		cloneRepositoryPanel = [PBCloneRepositoryPanel panel];
-
-	[cloneRepositoryPanel showWindow:self];
-}
-
-
-#pragma mark Help menu
-
-- (IBAction)showHelp:(id)sender
-{
-	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://gitx.github.io"]];
-}
-
-- (IBAction)reportAProblem:(id)sender
-{
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/gitx/gitx/issues"]];
-}
-
-- (IBAction)showChangeLog:(id)sender
-{
-	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/gitx/gitx/releases"]];
-}
-
-
 
 @end
