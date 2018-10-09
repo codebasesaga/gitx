@@ -9,7 +9,6 @@
 #import "PBDiffWindowController.h"
 #import "PBGitRepository.h"
 #import "PBGitCommit.h"
-#import "PBGitDefaults.h"
 
 
 @implementation PBDiffWindowController

@@ -60,24 +60,6 @@
 - (IBAction) openInTerminal:(id)sender;
 - (IBAction) refresh:(id)sender;
 
-- (IBAction) showAddRemoteSheet:(id)sender;
-
-- (IBAction) fetchRemote:(id)sender;
-- (IBAction) fetchAllRemotes:(id)sender;
-
-- (IBAction) pullRemote:(id)sender;
-- (IBAction) pullRebaseRemote:(id)sender;
-- (IBAction) pullDefaultRemote:(id)sender;
-- (IBAction) pullRebaseDefaultRemote:(id)sender;
-
-- (IBAction) stashSave:(id) sender;
-- (IBAction) stashSaveWithKeepIndex:(id) sender;
-- (IBAction) stashPop:(id) sender;
-
 - (void)setHistorySearch:(NSString *)searchString mode:(PBHistorySearchMode)mode;
-
-- (void)performFetchForRef:(PBGitRef *)ref;
-- (void)performPullForBranch:(PBGitRef *)branchRef remote:(PBGitRef *)remoteRef rebase:(BOOL)rebase;
-- (void)performPushForBranch:(PBGitRef *)branchRef toRemote:(PBGitRef *)remoteRef;
 
 @end

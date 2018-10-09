@@ -13,7 +13,6 @@
 #import "PBGitBinary.h"
 #import "GitXScriptingConstants.h"
 #import "PBRepositoryFinder.h"
-#import "PBGitDefaults.h"
 #import "PBOpenShallowRepositoryErrorRecoveryAttempter.h"
 #import "PBError.h"
 
@@ -81,12 +80,9 @@ NSString *PBGitRepositoryDocumentType = @"Git Repository";
 	return [NSString stringWithFormat:NSLocalizedString(@"%@ (branch: %@)", @""), self.repository.projectName, self.repository.headRef.description];
 }
 
-- (void)makeWindowControllers
-{
+- (void)makeWindowControllers {
     // Create our custom window controller
-#ifndef CLI
-	[self addWindowController:[[PBGitWindowController alloc] init]];
-#endif
+	[self addWindowController:[PBGitWindowController new]];
 }
 
 - (PBGitWindowController *)windowController
@@ -158,14 +154,12 @@ NSString *PBGitRepositoryDocumentType = @"Git Repository";
 	}
 
 	self.repository.currentBranch = [self.repository addBranch:revListSpecifier];
-	[PBGitDefaults setShowStageView:NO];
 	[self.windowController showHistoryView:self];
 }
 
 - (void)handleBranchFilterEventForFilter:(PBGitXBranchFilterType)filter additionalArguments:(NSArray *)arguments
 {
 	self.repository.currentBranchFilter = filter;
-	[PBGitDefaults setShowStageView:NO];
 	[self.windowController showHistoryView:self];
 
 	// treat any additional arguments as a rev-list specifier
@@ -185,7 +179,6 @@ NSString *PBGitRepositoryDocumentType = @"Git Repository";
 	NSString *firstArgument = [arguments objectAtIndex:0];
 
 	if ([firstArgument isEqualToString:@"-c"] || [firstArgument isEqualToString:@"--commit"]) {
-		[PBGitDefaults setShowStageView:YES];
 		[self.windowController showCommitView:self];
 		return;
 	} else {
@@ -220,7 +213,6 @@ NSString *PBGitRepositoryDocumentType = @"Git Repository";
 	NSDictionary *arguments = [command arguments];
 	NSString *searchString = [arguments objectForKey:kGitXFindSearchStringKey];
 	if (searchString) {
-		[PBGitDefaults setShowStageView:NO];
 		[self.windowController showHistoryView:self];
 		PBHistorySearchMode mode = PBSearchModeForInteger([[arguments objectForKey:kGitXFindInModeKey] integerValue]);
 		[self.windowController setHistorySearch:searchString mode:mode];

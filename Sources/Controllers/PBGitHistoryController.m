@@ -17,7 +17,6 @@
 #import "PBCommitList.h"
 #import "PBGitGradientBarView.h"
 #import "PBDiffWindowController.h"
-#import "PBGitDefaults.h"
 #import "PBHistorySearchController.h"
 #import "PBGitRepositoryWatcher.h"
 #import "GLFileView.h"
@@ -285,7 +284,6 @@
 	}
 
 	if ([strContext isEqualToString:@"branchFilterChange"]) {
-		[PBGitDefaults setBranchFilter:repository.currentBranchFilter];
 		[self updateBranchFilterMatrix];
 		return;
 	}
@@ -356,7 +354,6 @@
 - (IBAction) setBranchFilter:(id)sender
 {
 	repository.currentBranchFilter = [(NSView*)sender tag];
-	[PBGitDefaults setBranchFilter:repository.currentBranchFilter];
 	[self updateBranchFilterMatrix];
 	forceSelectionUpdate = YES;
 }

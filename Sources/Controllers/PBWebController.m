@@ -10,7 +10,6 @@
 #import "PBGitRepository.h"
 #import "PBGitRepository_PBGitBinarySupport.h"
 #import "PBGitXProtocol.h"
-#import "PBGitDefaults.h"
 
 #include <SystemConfiguration/SCNetworkReachability.h>
 
@@ -162,20 +161,6 @@ dragDestinationActionMaskForDraggingInfo:(id<NSDraggingInfo>)draggingInfo
 		return FALSE;
 
 	return flags > 0;
-}
-
-- (BOOL) isFeatureEnabled:(NSString *)feature
-{
-	if([feature isEqualToString:@"gravatar"])
-		return [PBGitDefaults isGravatarEnabled];
-	else if([feature isEqualToString:@"gist"])
-		return [PBGitDefaults isGistEnabled];
-	else if([feature isEqualToString:@"confirmGist"])
-		return [PBGitDefaults confirmPublicGists];
-	else if([feature isEqualToString:@"publicGist"])
-		return [PBGitDefaults isGistPublic];
-	else
-		return YES;
 }
 
 #pragma mark Using async function from JS

@@ -13,10 +13,8 @@
 #import "PBCommitHookFailedSheet.h"
 #import "PBGitXMessageSheet.h"
 #import "PBGitSidebarController.h"
-#import "PBAddRemoteSheet.h"
 #import "PBCreateBranchSheet.h"
 #import "PBCreateTagSheet.h"
-#import "PBGitDefaults.h"
 #import "PBSourceViewItem.h"
 #import "PBGitRevSpecifier.h"
 #import "PBGitRef.h"
@@ -156,14 +154,12 @@
 	[contentController addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionInitial context:@"statusChange"];
 }
 
-- (void)showCommitView:(id)sender
-{
+- (void)showCommitView:(id)sender {
 	segmentedControl.integerValue = 1;
 	[sidebarController selectStage];
 }
 
-- (void)showHistoryView:(id)sender
-{
+- (void)showHistoryView:(id)sender {
 	segmentedControl.integerValue = 0;
 	[sidebarController selectCurrentBranch];
 }
@@ -245,8 +241,6 @@
 	[_historyViewController setHistorySearch:searchString mode:mode];
 }
 
-
-
 - (void)openURLs:(NSArray <NSURL *> *)fileURLs
 {
 	if (fileURLs.count == 0) return;
@@ -280,122 +274,6 @@
 	if (fileURLs.count == 0) return;
 
 	[[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:fileURLs];
-}
-
-- (void)performFetchForRef:(PBGitRef *)ref
-{
-	NSString *desc = nil;
-	if (ref == nil) {
-		desc = [NSString stringWithFormat:@"Fetching all remotes"];
-	} else if (ref.isRemote || ref.isRemoteBranch) {
-		desc = [NSString stringWithFormat:@"Fetching branches from remote %@", ref.remoteName];
-	} else {
-		desc = [NSString stringWithFormat:@"Fetching tracking branch for %@", ref.shortName];
-	}
-
-	PBRemoteProgressSheet *progressSheet = [PBRemoteProgressSheet progressSheetWithTitle:@"Fetching remote…"
-																			 description:desc
-																		windowController:self];
-
-	[progressSheet beginProgressSheetForBlock:^{
-		NSError *error = nil;
-		BOOL success = [self.repository fetchRemoteForRef:ref error:&error];
-		return (success ? nil : error);
-	} completionHandler:^(NSError *error) {
-		if (error) {
-			[self showErrorSheet:error];
-		}
-	}];
-}
-
-- (void)performPullForBranch:(PBGitRef *)branchRef remote:(PBGitRef *)remoteRef rebase:(BOOL)rebase {
-	NSString *description = nil;
-	if (!branchRef && !remoteRef) {
-		NSAssert(NO, @"Asked to pull no branch from no remote");
-	} else if (!branchRef) {
-		description = [NSString stringWithFormat:@"Pulling all tracking branches from %@", remoteRef.remoteName];
-	} else if (!remoteRef) {
-		description = [NSString stringWithFormat:@"Pulling default remote for branch %@", branchRef.shortName];
-	} else {
-		description = [NSString stringWithFormat:@"Pulling branch %@ from remote %@", branchRef.shortName, remoteRef.remoteName];
-	}
-
-	PBRemoteProgressSheet *progressSheet = [PBRemoteProgressSheet progressSheetWithTitle:@"Pulling remote…"
-																			 description:description
-																		windowController:self];
-
-	[progressSheet beginProgressSheetForBlock:^{
-		NSError *error = nil;
-		BOOL success = [self.repository pullBranch:branchRef fromRemote:remoteRef rebase:rebase error:&error];
-		return success ? nil : error;
-	} completionHandler:^(NSError *error) {
-		if (error) {
-			[self showErrorSheet:error];
-		}
-	}];
-}
-
-- (void)performPushForBranch:(PBGitRef *)branchRef toRemote:(PBGitRef *)remoteRef
-{
-	if ((!branchRef && !remoteRef)
-		|| (branchRef && !branchRef.isBranch && !branchRef.isRemoteBranch && !branchRef.isTag)
-		|| (remoteRef && !remoteRef.isRemote))
-		return;
-
-	// This block is actually responsible for performing the push operation
-	void (^pushBlock)(void) = ^{
-		NSString *description = nil;
-		if (branchRef && remoteRef)
-			description = [NSString stringWithFormat:@"Pushing %@ '%@' to remote %@", branchRef.refishType, branchRef.shortName, remoteRef.remoteName];
-		else if (branchRef)
-			description = [NSString stringWithFormat:@"Pushing %@ '%@' to default remote", branchRef.refishType, branchRef.shortName];
-		else
-			description = [NSString stringWithFormat:@"Pushing updates to remote %@", remoteRef.remoteName];
-
-		PBRemoteProgressSheet *progressSheet = [PBRemoteProgressSheet progressSheetWithTitle:@"Pushing remote…"
-																				 description:description
-																			windowController:self];
-
-		[progressSheet beginProgressSheetForBlock:^{
-			NSError *error = nil;
-			BOOL success = [self.repository pushBranch:branchRef toRemote:remoteRef error:&error];
-			return (success ? nil : error);
-		} completionHandler:^(NSError *error) {
-			if (error) {
-				[self showErrorSheet:error];
-			}
-		}];
-	};
-
-	if ([PBGitDefaults isDialogWarningSuppressedForDialog:kDialogConfirmPush]) {
-		pushBlock();
-		return;
-	}
-
-	NSString *description = nil;
-	if (branchRef && remoteRef)
-		description = [NSString stringWithFormat:@"Push %@ '%@' to remote %@", branchRef.refishType, branchRef.shortName, remoteRef.remoteName];
-	else if (branchRef)
-		description = [NSString stringWithFormat:@"Push %@ '%@' to default remote", branchRef.refishType, branchRef.shortName];
-	else
-		description = [NSString stringWithFormat:@"Push updates to remote %@", remoteRef.remoteName];
-
-	NSString *sdesc = [NSString stringWithFormat:@"p%@", [description substringFromIndex:1]];
-	NSAlert *alert = [[NSAlert alloc] init];
-	alert.messageText = description;
-	alert.informativeText = [NSString stringWithFormat:@"Are you sure you want to %@?", sdesc];
-	[alert addButtonWithTitle:NSLocalizedString(@"Push", @"")];
-	[alert addButtonWithTitle:NSLocalizedString(@"Cancel", @"")];
-	[alert setShowsSuppressionButton:YES];
-
-	[alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
-		if ([alert.suppressionButton state] == NSOnState)
-			[PBGitDefaults suppressDialogWarningForDialog:kDialogConfirmPush];
-
-		if (returnCode != NSAlertFirstButtonReturn) return;
-
-		pushBlock();
-	}];
 }
 
 - (NSArray <NSURL *> *)selectedURLsFromSender:(id)sender {
@@ -467,170 +345,6 @@
 	return nil;
 }
 
-- (IBAction) showAddRemoteSheet:(id)sender
-{
-	[self addRemote:sender];
-}
-
-- (IBAction)addRemote:(id)sender
-{
-	[PBAddRemoteSheet beginSheetWithWindowController:self completionHandler:^(PBAddRemoteSheet *addSheet, NSModalResponse returnCode) {
-		if (returnCode != NSModalResponseOK) return;
-
-		NSString *remoteName = addSheet.remoteName.stringValue;
-		NSString *remoteURL = addSheet.remoteURL.stringValue;
-
-		NSString *description = [NSString stringWithFormat:@"Adding remote \"%@\"", remoteName];
-
-		PBRemoteProgressSheet *progressSheet = [PBRemoteProgressSheet progressSheetWithTitle:@"Adding remote"
-																				 description:description
-																			windowController:self];
-		[progressSheet beginProgressSheetForBlock:^{
-			NSError *error = nil;
-			BOOL success = [self.repository addRemote:remoteName withURL:remoteURL error:&error];
-			return success ? nil : error;
-		} completionHandler:^(NSError *error) {
-			if (error) {
-				[self showErrorSheet:error];
-				return;
-			}
-
-			// Now fetch that remote
-			PBGitRef *remoteRef = [self.repository refForName:remoteName];
-			[self performFetchForRef:remoteRef];
-		}];
-	}];
-}
-
-- (IBAction)deleteRef:(id)sender
-{
-	id <PBGitRefish> refish = [self refishForSender:sender refishTypes:@[kGitXBranchType, kGitXRemoteType]];
-	if (!refish || ![refish isKindOfClass:[PBGitRef class]])
-		return;
-
-	PBGitRef *ref = (PBGitRef *)refish;
-
-	void (^performDelete)(void) = ^{
-		NSError *error = nil;
-		BOOL success = [self.repository deleteRef:ref error:&error];
-		if (!success) {
-			[self showErrorSheet:error];
-		}
-		return;
-	};
-
-	if ([PBGitDefaults isDialogWarningSuppressedForDialog:kDialogDeleteRef]) {
-		performDelete();
-		return;
-	}
-
-	NSString *ref_desc = [NSString stringWithFormat:@"%@ '%@'", [ref refishType], [ref shortName]];
-
-	NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:@"Delete %@?", ref_desc]
-									 defaultButton:@"Delete"
-								   alternateButton:@"Cancel"
-									   otherButton:nil
-						 informativeTextWithFormat:@"Are you sure you want to remove the %@?", ref_desc];
-	[alert setShowsSuppressionButton:YES];
-
-	[alert beginSheetModalForWindow:self.window
-				  completionHandler:^(NSModalResponse returnCode) {
-					  if ([[alert suppressionButton] state] == NSOnState)
-						  [PBGitDefaults suppressDialogWarningForDialog:kDialogDeleteRef];
-
-					  if (returnCode == NSModalResponseOK) {
-						  performDelete();
-					  }
-				  }];
-}
-
-- (IBAction)fetchRemote:(id)sender
-{
-	id <PBGitRefish> refish = [self refishForSender:sender refishTypes:@[kGitXBranchType, kGitXRemoteType]];
-	if (!refish || ![refish isKindOfClass:[PBGitRef class]])
-		return;
-
-	[self performFetchForRef:refish];
-}
-
-- (IBAction) fetchAllRemotes:(id)sender
-{
-	[self performFetchForRef:nil];
-}
-
-- (IBAction)pullRemote:(id)sender
-{
-	id <PBGitRefish> refish = [self refishForSender:sender refishTypes:@[kGitXBranchType]];
-	if (!refish || ![refish isKindOfClass:[PBGitRef class]])
-		return;
-
-	[self performPullForBranch:refish remote:nil rebase:NO];
-}
-
-- (IBAction) pullRebaseRemote:(id)sender
-{
-	id <PBGitRefish> refish = [self refishForSender:sender refishTypes:@[kGitXBranchType]];
-	if (!refish || ![refish isKindOfClass:[PBGitRef class]])
-		return;
-
-	[self performPullForBranch:refish remote:nil rebase:YES];
-}
-
-- (IBAction)pullDefaultRemote:(id)sender
-{
-	id <PBGitRefish> refish = [self refishForSender:sender refishTypes:@[kGitXBranchType]];
-	if (!refish || ![refish isKindOfClass:[PBGitRef class]])
-		return;
-
-	[self performPullForBranch:refish remote:nil rebase:NO];
-}
-
-- (IBAction)pullRebaseDefaultRemote:(id)sender
-{
-	id <PBGitRefish> refish = [self refishForSender:sender refishTypes:@[kGitXBranchType]];
-	if (!refish || ![refish isKindOfClass:[PBGitRef class]])
-		return;
-	[self performPullForBranch:refish remote:nil rebase:YES];
-}
-
-- (IBAction)pushUpdatesToRemote:(id)sender
-{
-	id <PBGitRefish> refish = [self refishForSender:sender refishTypes:@[kGitXRemoteType]];
-	if (!refish || ![refish isKindOfClass:[PBGitRef class]])
-		return;
-
-	PBGitRef *remoteRef = [(PBGitRef *)refish remoteRef];
-
-	[self performPushForBranch:nil toRemote:remoteRef];
-}
-
-- (IBAction)pushDefaultRemoteForRef:(id)sender
-{
-	id <PBGitRefish> refish = [self refishForSender:sender refishTypes:@[kGitXBranchType]];
-	if (!refish || ![refish isKindOfClass:[PBGitRef class]])
-		return;
-
-	PBGitRef *ref = (PBGitRef *)refish;
-
-	[self performPushForBranch:ref toRemote:nil];
-}
-
-- (IBAction)pushToRemote:(id)sender
-{
-	NSMenuItem *remoteSubmenu = sender;
-	if (![remoteSubmenu isKindOfClass:[NSMenuItem class]]) return;
-
-	id <PBGitRefish> ref = [self refishForSender:remoteSubmenu.parentItem refishTypes:@[kGitXBranchType]];
-	if (!ref || ![ref isKindOfClass:[PBGitRef class]])
-		return;
-
-	id <PBGitRefish> remoteRef = [self refishForSender:sender refishTypes:@[kGitXRemoteType]];
-	if (!remoteRef || ![remoteRef isKindOfClass:[PBGitRef class]])
-		return;
-
-	[self performPushForBranch:ref toRemote:remoteRef];
-}
-
 - (IBAction)checkout:(id)sender
 {
 	id <PBGitRefish> refish = [self refishForSender:sender refishTypes:@[kGitXBranchType, kGitXRemoteBranchType, kGitXCommitType, kGitXTagType]];
@@ -643,120 +357,12 @@
 	}
 }
 
-- (IBAction)merge:(id)sender
-{
-	id <PBGitRefish> refish = [self refishForSender:sender refishTypes:@[kGitXBranchType, kGitXRemoteBranchType, kGitXCommitType, kGitXTagType]];
-	if (!refish) return;
-
-	NSError *error = nil;
-	BOOL success = [self.repository mergeWithRefish:refish error:&error];
-	if (!success) {
-		[self showErrorSheet:error];
-	}
-}
-
-- (IBAction)rebase:(id)sender
-{
-	id <PBGitRefish> refish = [self refishForSender:sender refishTypes:@[kGitXCommitType]];
-	if (!refish) return;
-
-	NSError *error = nil;
-	BOOL success = [self.repository rebaseBranch:nil onRefish:refish error:&error];
-	if (!success) {
-		[self showErrorSheet:error];
-	}
-}
-
-- (IBAction)rebaseHeadBranch:(id)sender
-{
-	id <PBGitRefish> refish = [self refishForSender:sender refishTypes:@[kGitXCommitType]];
-	if (!refish || ![refish isKindOfClass:[PBGitCommit class]])
-		return;
-
-	NSError *error = nil;
-	BOOL success = [self.repository rebaseBranch:nil onRefish:refish error:&error];
-	if (!success) {
-		[self showErrorSheet:error];
-	}
-}
-
-- (IBAction)cherryPick:(id)sender
-{
-	id <PBGitRefish> refish = [self refishForSender:sender refishTypes:@[kGitXCommitType]];
-	if (!refish) return;
-
-	NSError *error = nil;
-	BOOL success = [self.repository cherryPickRefish:refish error:&error];
-	if (!success) {
-		[self showErrorSheet:error];
-	}
-}
-
-- (IBAction)stashSave:(id)sender
-{
-	NSError *error = nil;
-	BOOL success = [self.repository stashSaveWithKeepIndex:NO error:&error];
-
-	if (!success) {
-		[self showErrorSheet:error];
-	}
-}
-
-- (IBAction)stashSaveWithKeepIndex:(id) sender
-{
-	NSError *error = nil;
-	BOOL success = [self.repository stashSaveWithKeepIndex:YES error:&error];
-
-	if (!success) {
-		[self showErrorSheet:error];
-	}
-}
-
-- (IBAction)stashPop:(id)sender
-{
-	id <PBGitRefish> refish = [self refishForSender:sender refishTypes:@[kGitXStashType]];
-	PBGitStash *stash = [self.repository stashForRef:refish];
-	if (!stash) {
-		stash = self.repository.stashes.firstObject;
-	}
-
-	NSError *error = nil;
-	BOOL success = [self.repository stashPop:stash error:&error];
-	if (!success) {
-		[self showErrorSheet:error];
-	}
-}
-
-- (IBAction)stashApply:(id)sender
-{
-	id <PBGitRefish> refish = [self refishForSender:sender refishTypes:@[kGitXStashType]];
-	PBGitStash *stash = [self.repository stashForRef:refish];
-	NSError *error = nil;
-	BOOL success = [self.repository stashApply:stash error:&error];
-
-	if (!success) {
-		[self showErrorSheet:error];
-	}
-}
-
-- (IBAction)stashDrop:(id)sender
-{
-	id <PBGitRefish> refish = [self refishForSender:sender refishTypes:@[kGitXStashType]];
-	PBGitStash *stash = [self.repository stashForRef:refish];
-	NSError *error = nil;
-	BOOL success = [self.repository stashDrop:stash error:&error];
-
-	if (!success) {
-		[self showErrorSheet:error];
-	}
-}
-
-- (IBAction) openFiles:(id)sender {
+- (IBAction)openFiles:(id)sender {
 	NSArray <NSURL *> *fileURLs = [self selectedURLsFromSender:sender];
 	[self openURLs:fileURLs];
 }
 
-- (IBAction) revealInFinder:(id)sender
+- (IBAction)revealInFinder:(id)sender
 {
 	[self revealURLsInFinder:@[self.repository.workingDirectoryURL]];
 }
@@ -766,71 +372,9 @@
 	[PBTerminalUtil runCommand:@"git status" inDirectory:self.repository.workingDirectoryURL];
 }
 
-- (IBAction) refresh:(id)sender
+- (IBAction)refresh:(id)sender
 {
 	[contentController refresh:self];
-}
-
-- (void) createBranch:(id)sender
-{
-	PBGitRef *currentRef = [self.repository.currentBranch ref];
-
-	/* WIP: must check */
-	id <PBGitRefish> refish = [self refishForSender:sender refishTypes:nil];
-	if (!refish) {
-		PBGitCommit *selectedCommit = _historyViewController.selectedCommits.firstObject;
-		if (!selectedCommit || [selectedCommit hasRef:currentRef]) {
-			refish = currentRef;
-		} else {
-			refish = selectedCommit;
-		}
-	}
-
-	[PBCreateBranchSheet beginSheetWithRefish:refish windowController:self completionHandler:^(PBCreateBranchSheet *sheet, NSModalResponse returnCode) {
-		if (returnCode != NSModalResponseOK) return;
-
-		NSError *error = nil;
-		BOOL success = [self.repository createBranch:[sheet.branchNameField stringValue] atRefish:sheet.startRefish error:&error];
-		if (!success) {
-			[self showErrorSheet:error];
-			return;
-		}
-
-		[PBGitDefaults setShouldCheckoutBranch:sheet.shouldCheckoutBranch];
-
-		if (sheet.shouldCheckoutBranch) {
-			success = [self.repository checkoutRefish:sheet.selectedRef error:&error];
-			if (!success) {
-				[self showErrorSheet:error];
-				return;
-			}
-		}
-	}];
-}
-
-- (IBAction) createTag:(id)sender
-{
-	/* WIP: must check */
-	id <PBGitRefish> refish = [self refishForSender:sender refishTypes:nil];
-	if (!refish) {
-		PBGitCommit *selectedCommit = _historyViewController.selectedCommits.firstObject;
-		if (selectedCommit)
-			refish = selectedCommit;
-		else
-			refish = self.repository.currentBranch.ref;
-	}
-
-	[PBCreateTagSheet beginSheetWithRefish:refish windowController:self completionHandler:^(PBCreateTagSheet *sheet, NSModalResponse returnCode) {
-		if (returnCode != NSModalResponseOK) return;
-
-		NSString *tagName = [sheet.tagNameField stringValue];
-		NSString *message = [sheet.tagMessageText string];
-		NSError *error = nil;
-		BOOL success = [self.repository createTag:tagName message:message atRefish:sheet.targetRefish error:&error];
-		if (!success) {
-			[self showErrorSheet:error];
-		}
-	}];
 }
 
 - (IBAction)diffWithHEAD:(id)sender

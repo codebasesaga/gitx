@@ -9,7 +9,6 @@
 #import "PBRefController.h"
 #import "PBGitRevisionCell.h"
 #import "PBRefMenuItem.h"
-#import "PBGitDefaults.h"
 #import "PBDiffWindowController.h"
 #import "PBGitRevSpecifier.h"
 #import "PBGitStash.h"
@@ -155,11 +154,6 @@
 							  dropCommit, @"dropCommit",
 							  nil];
 
-	if ([PBGitDefaults isDialogWarningSuppressedForDialog:kDialogAcceptDroppedRef]) {
-		[self dropRef:dropInfo];
-		return YES;
-	}
-
 	NSString *subject = [dropCommit subject];
 	if ([subject length] > 99)
 		subject = [[subject substringToIndex:99] stringByAppendingString:@"…"];
@@ -186,9 +180,6 @@
 
 	if (returnCode == NSAlertDefaultReturn)
 		[self dropRef:(__bridge NSDictionary*)contextInfo];
-
-	if ([[alert suppressionButton] state] == NSOnState)
-        [PBGitDefaults suppressDialogWarningForDialog:kDialogAcceptDroppedRef];
 }
 
 - (void)dealloc {

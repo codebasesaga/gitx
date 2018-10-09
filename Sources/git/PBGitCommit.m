@@ -11,7 +11,6 @@
 #import "PBGitCommit.h"
 #import "PBGitTree.h"
 #import "PBGitRef.h"
-#import "PBGitDefaults.h"
 #import "ObjectiveGit+PBCategories.h"
 
 NSString * const kGitXCommitType = @"commit";

@@ -13,8 +13,6 @@
 #import "PBRefController.h"
 #import "PBSourceViewCell.h"
 #import "NSOutlineViewExt.h"
-#import "PBAddRemoteSheet.h"
-#import "PBGitDefaults.h"
 #import "PBHistorySearchController.h"
 #import "PBGitStash.h"
 #import "PBGitSVStashItem.h"
@@ -227,12 +225,10 @@
 		if (![repository.currentBranch isEqual:[item revSpecifier]])
 			repository.currentBranch = [item revSpecifier];
 		[superController changeContentController:superController.historyViewController];
-		[PBGitDefaults setShowStageView:NO];
 	}
 
 	if (item == stage) {
 		[superController changeContentController:superController.commitViewController];
-		[PBGitDefaults setShowStageView:YES];
 	}
 
 	[self updateActionMenu];
@@ -463,40 +459,6 @@ enum  {
 	[remoteControls setEnabled:hasRemote forSegment:kFetchSegment];
 	[remoteControls setEnabled:hasRemote forSegment:kPullSegment];
 	[remoteControls setEnabled:hasRemote forSegment:kPushSegment];
-}
-
-- (IBAction) fetchPullPushAction:(id)sender
-{
-	NSInteger selectedSegment = [sender selectedSegment];
-
-	if (selectedSegment == kAddRemoteSegment) {
-		[self tryToPerform:@selector(addRemote:) with:self];
-		return;
-	}
-
-	NSInteger index = [sourceView selectedRow];
-	PBSourceViewItem *item = [sourceView itemAtRow:index];
-	PBGitRef *ref = [[item revSpecifier] ref];
-
-	if (!ref && (item.parent == remotes))
-		ref = [PBGitRef refFromString:[kGitXRemoteRefPrefix stringByAppendingString:[item title]]];
-
-	if (![ref isRemote] && ![ref isBranch])
-		return;
-
-	PBGitRef *remoteRef = [repository remoteRefForBranch:ref error:NULL];
-	if (!remoteRef)
-		return;
-
-	if (selectedSegment == kFetchSegment) {
-		[self.windowController performFetchForRef:ref];
-	} else if (selectedSegment == kPullSegment) {
-		[self.windowController performPullForBranch:ref remote:remoteRef rebase:NO];
-	} else if (selectedSegment == kPushSegment && ref.isRemote) {
-		[self.windowController performPushForBranch:nil toRemote:remoteRef];
-	} else if (selectedSegment == kPushSegment && ref.isBranch) {
-		[self.windowController performPushForBranch:ref toRemote:remoteRef];
-	}
 }
 
 @end

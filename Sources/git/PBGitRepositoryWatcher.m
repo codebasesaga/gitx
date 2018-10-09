@@ -9,7 +9,6 @@
 
 #import "PBGitRepositoryWatcher.h"
 #import "PBGitRepository.h"
-#import "PBGitDefaults.h"
 
 NSString *PBGitRepositoryEventNotification = @"PBGitRepositoryModifiedNotification";
 NSString *kPBGitRepositoryEventTypeUserInfoKey = @"kPBGitRepositoryEventTypeUserInfoKey";
@@ -94,8 +93,7 @@ void PBGitRepositoryWatcherCallback(ConstFSEventStreamRef streamRef,
 	_repository = theRepository;
 	_statusCache = [NSMutableDictionary new];
 	
-	if ([PBGitDefaults useRepositoryWatcher])
-		[self start];
+	[self start];
 	return self;
 }
 

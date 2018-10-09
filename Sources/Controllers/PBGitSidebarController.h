@@ -35,8 +35,6 @@
 - (NSMenu *) menuForRow:(NSInteger)row;
 - (void) menuNeedsUpdate:(NSMenu *)menu;
 
-- (IBAction) fetchPullPushAction:(id)sender;
-
 @property(readonly) NSMutableArray *items;
 @property(readonly) PBSourceViewItem *remotes;
 @property(readonly) NSOutlineView *sourceView;

@@ -12,7 +12,6 @@
 #import "PBGitHistoryController.h"
 #import "PBGitRepository.h"
 #import "PBGitRepository_PBGitBinarySupport.h"
-#import "PBGitDefaults.h"
 #import "PBCommitList.h"
 #import "PBGitCommit.h"
 #import "PBError.h"
@@ -125,7 +124,7 @@
 - (void)awakeFromNib
 {
 	[self setupSearchMenuTemplate];
-	self.searchMode = PBSearchModeForInteger([PBGitDefaults historySearchMode]);
+	self.searchMode = PBSearchModeForInteger(PBHistorySearchModeBasic);
 
 	[self updateUI];
 
@@ -297,8 +296,6 @@
 	[self updateSearchModeMenuItemWithTag:PBHistorySearchModePath inMenu:searchMenu];
 
     [[searchField cell] setSearchMenuTemplate:searchMenu];
-
-	[PBGitDefaults setHistorySearchMode:searchMode];
 }
 
 - (void) updateSearchModeMenuItemWithTag:(PBHistorySearchMode)menuItemSearchMode inMenu:(NSMenu *) searchMenu {
@@ -332,8 +329,6 @@
 - (void)setSearchMode:(PBHistorySearchMode)mode
 {
 	searchMode = mode;
-	[PBGitDefaults setHistorySearchMode:mode];
-
 	[self updateSearchMenuState];
 	[self updateSearchPlaceholderString];
 }

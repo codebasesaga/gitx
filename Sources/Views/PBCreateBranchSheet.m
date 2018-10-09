@@ -8,7 +8,6 @@
 
 #import "PBCreateBranchSheet.h"
 #import "PBGitRepository.h"
-#import "PBGitDefaults.h"
 #import "PBGitCommit.h"
 #import "PBGitRef.h"
 #import "PBGitWindowController.h"
@@ -49,7 +48,7 @@
 {
 	[self window]; // loads the window (if it wasn't already)
 	[self.errorMessageField setStringValue:@""];
-	self.shouldCheckoutBranch = [PBGitDefaults shouldCheckoutBranch];
+	self.shouldCheckoutBranch = NO;
 
 	// when creating a local branch tracking a remote branch preset the branch name to the 	name of the remote branch
 	if ([self.startRefish refishType] == kGitXRemoteBranchType) {

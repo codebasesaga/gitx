@@ -13,7 +13,6 @@
 #import "PBServicesController.h"
 #import "PBGitXProtocol.h"
 #import "PBNSURLPathUserDefaultsTransfomer.h"
-#import "PBGitDefaults.h"
 #import "PBGitBinary.h"
 #import "PBGitRepositoryDocument.h"
 #import "PBRepositoryFinder.h"
@@ -35,9 +34,6 @@
 	/* Value Transformers */
 	NSValueTransformer *transformer = [PBNSURLPathUserDefaultsTransfomer new];
 	[NSValueTransformer setValueTransformer:transformer forName:@"PBNSURLPathUserDefaultsTransfomer"];
-	
-	// Make sure the PBGitDefaults is initialized, by calling a random method
-	[PBGitDefaults class];
 	
 	started = NO;
 

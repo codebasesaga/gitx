@@ -21,7 +21,6 @@
 #import "PBGitRevSpecifier.h"
 #import "PBRemoteProgressSheet.h"
 #import "PBGitRevList.h"
-#import "PBGitDefaults.h"
 #import "GitXScriptingConstants.h"
 #import "PBHistorySearchController.h"
 #import "PBGitRepositoryWatcher.h"
@@ -56,7 +55,6 @@
 
 	self.branchesSet = [NSMutableOrderedSet orderedSet];
     self.submodules = [NSMutableArray array];
-	currentBranchFilter = [PBGitDefaults branchFilter];
     return self;
 }
 
@@ -998,9 +996,6 @@
 
 	NSString *commitSelector = [NSString stringWithFormat:@"%@..%@", startCommit.SHA, diffCommit.SHA];
 	NSMutableArray *arguments = [NSMutableArray arrayWithObjects:@"diff", @"--no-ext-diff", commitSelector, nil];
-
-	if (![PBGitDefaults showWhitespaceDifferences])
-		[arguments insertObject:@"-w" atIndex:1];
 
 	if (filePaths) {
 		[arguments addObject:@"--"];

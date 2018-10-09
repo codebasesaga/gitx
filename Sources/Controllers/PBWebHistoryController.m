@@ -7,7 +7,6 @@
 //
 
 #import "PBWebHistoryController.h"
-#import "PBGitDefaults.h"
 #import <ObjectiveGit/GTConfiguration.h>
 #import "PBGitRef.h"
 #import "PBGitRevSpecifier.h"
@@ -162,9 +161,6 @@ static NSUInteger reallyGetFileSize(GTRepository *repo, GTDiffFile *file) {
 static NSDictionary *loadCommitSummary(GTRepository *repo, GTCommit *commit, BOOL (^isCanceled)(void)) {
 	if (isCanceled()) return nil;
 	GTDiffFindOptionsFlags flags = GTDiffFindOptionsFlagsFindRenames;
-	if (![PBGitDefaults showWhitespaceDifferences]) {
-		flags |= GTDiffFindOptionsFlagsIgnoreWhitespace;
-	}
 	NSError *err = nil;
 	GTDiff *d = [GTDiff diffOldTree:commit.parents.firstObject.tree
 	                    withNewTree:commit.tree

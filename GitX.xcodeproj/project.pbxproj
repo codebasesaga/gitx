@@ -27,7 +27,6 @@
 		4A5D760114A9A90500DF6C68 /* PBGitXMessageSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D75C014A9A90500DF6C68 /* PBGitXMessageSheet.xib */; };
 		4A5D761714A9A99E00DF6C68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D760314A9A99E00DF6C68 /* InfoPlist.strings */; };
 		4A5D761814A9A99E00DF6C68 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D760514A9A99E00DF6C68 /* MainMenu.xib */; };
-		4A5D761914A9A99E00DF6C68 /* PBAddRemoteSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D760714A9A99E00DF6C68 /* PBAddRemoteSheet.xib */; };
 		4A5D761A14A9A99E00DF6C68 /* PBCloneRepositoryPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D760914A9A99E00DF6C68 /* PBCloneRepositoryPanel.xib */; };
 		4A5D761C14A9A99E00DF6C68 /* PBCreateBranchSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D760D14A9A99E00DF6C68 /* PBCreateBranchSheet.xib */; };
 		4A5D761D14A9A99E00DF6C68 /* PBCreateTagSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5D760F14A9A99E00DF6C68 /* PBCreateTagSheet.xib */; };
@@ -50,7 +49,6 @@
 		4A5D76F314A9A9CC00DF6C68 /* PBWebHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D764B14A9A9CC00DF6C68 /* PBWebHistoryController.m */; };
 		4A5D76F414A9A9CC00DF6C68 /* PBGitBinary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D764F14A9A9CC00DF6C68 /* PBGitBinary.m */; };
 		4A5D76F514A9A9CC00DF6C68 /* PBGitCommit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D765114A9A9CC00DF6C68 /* PBGitCommit.m */; };
-		4A5D76F714A9A9CC00DF6C68 /* PBGitDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D765514A9A9CC00DF6C68 /* PBGitDefaults.m */; };
 		4A5D76F814A9A9CC00DF6C68 /* PBGitGrapher.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D765714A9A9CC00DF6C68 /* PBGitGrapher.mm */; };
 		4A5D76F914A9A9CC00DF6C68 /* PBGitGraphLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D765914A9A9CC00DF6C68 /* PBGitGraphLine.m */; };
 		4A5D76FA14A9A9CC00DF6C68 /* PBGitHistoryGrapher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D765B14A9A9CC00DF6C68 /* PBGitHistoryGrapher.m */; };
@@ -87,7 +85,6 @@
 		4A5D772314A9A9CC00DF6C68 /* PBEasyPipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76B214A9A9CC00DF6C68 /* PBEasyPipe.m */; };
 		4A5D772414A9A9CC00DF6C68 /* GitXTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76B514A9A9CC00DF6C68 /* GitXTextFieldCell.m */; };
 		4A5D772514A9A9CC00DF6C68 /* GLFileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76B714A9A9CC00DF6C68 /* GLFileView.m */; };
-		4A5D772614A9A9CC00DF6C68 /* PBAddRemoteSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76B914A9A9CC00DF6C68 /* PBAddRemoteSheet.m */; };
 		4A5D772A14A9A9CC00DF6C68 /* PBCommitHookFailedSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76C114A9A9CC00DF6C68 /* PBCommitHookFailedSheet.m */; };
 		4A5D772B14A9A9CC00DF6C68 /* PBCommitMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76C314A9A9CC00DF6C68 /* PBCommitMessageView.m */; };
 		4A5D772C14A9A9CC00DF6C68 /* PBCreateBranchSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D76C514A9A9CC00DF6C68 /* PBCreateBranchSheet.m */; };
@@ -136,7 +133,6 @@
 		978357B1189C074500ADC689 /* TagTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 978357AC189C074500ADC689 /* TagTemplate.pdf */; };
 		978357B8189C19A000ADC689 /* AddBranchTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 978357B2189C19A000ADC689 /* AddBranchTemplate.pdf */; };
 		978357B9189C19A000ADC689 /* AddLabelTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 978357B3189C19A000ADC689 /* AddLabelTemplate.pdf */; };
-		978357BA189C19A000ADC689 /* AddRemoteTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 978357B4189C19A000ADC689 /* AddRemoteTemplate.pdf */; };
 		978357BB189C19A000ADC689 /* FetchTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 978357B5189C19A000ADC689 /* FetchTemplate.pdf */; };
 		978357BC189C19A000ADC689 /* PullTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 978357B6189C19A000ADC689 /* PullTemplate.pdf */; };
 		978357BD189C19A000ADC689 /* PushTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 978357B7189C19A000ADC689 /* PushTemplate.pdf */; };
@@ -245,8 +241,6 @@
 		4A5D764F14A9A9CC00DF6C68 /* PBGitBinary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBGitBinary.m; sourceTree = "<group>"; };
 		4A5D765014A9A9CC00DF6C68 /* PBGitCommit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PBGitCommit.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4A5D765114A9A9CC00DF6C68 /* PBGitCommit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PBGitCommit.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		4A5D765414A9A9CC00DF6C68 /* PBGitDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBGitDefaults.h; sourceTree = "<group>"; };
-		4A5D765514A9A9CC00DF6C68 /* PBGitDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBGitDefaults.m; sourceTree = "<group>"; };
 		4A5D765614A9A9CC00DF6C68 /* PBGitGrapher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBGitGrapher.h; sourceTree = "<group>"; };
 		4A5D765714A9A9CC00DF6C68 /* PBGitGrapher.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = PBGitGrapher.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4A5D765814A9A9CC00DF6C68 /* PBGitGraphLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBGitGraphLine.h; sourceTree = "<group>"; };
@@ -323,8 +317,6 @@
 		4A5D76B514A9A9CC00DF6C68 /* GitXTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitXTextFieldCell.m; sourceTree = "<group>"; };
 		4A5D76B614A9A9CC00DF6C68 /* GLFileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLFileView.h; sourceTree = "<group>"; };
 		4A5D76B714A9A9CC00DF6C68 /* GLFileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GLFileView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		4A5D76B814A9A9CC00DF6C68 /* PBAddRemoteSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBAddRemoteSheet.h; sourceTree = "<group>"; };
-		4A5D76B914A9A9CC00DF6C68 /* PBAddRemoteSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBAddRemoteSheet.m; sourceTree = "<group>"; };
 		4A5D76C014A9A9CC00DF6C68 /* PBCommitHookFailedSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBCommitHookFailedSheet.h; sourceTree = "<group>"; };
 		4A5D76C114A9A9CC00DF6C68 /* PBCommitHookFailedSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBCommitHookFailedSheet.m; sourceTree = "<group>"; };
 		4A5D76C214A9A9CC00DF6C68 /* PBCommitMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBCommitMessageView.h; sourceTree = "<group>"; };
@@ -380,7 +372,6 @@
 		630A132F215EB3A000A14FA3 /* libcrypto.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.1.0.0.dylib; path = /usr/local/Cellar/openssl/1.0.2p/lib/libcrypto.1.0.0.dylib; sourceTree = "<absolute>"; };
 		63663D73215D408300FBAA0A /* ObjectiveGit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectiveGit.framework; path = Carthage/Build/Mac/ObjectiveGit.framework; sourceTree = "<group>"; };
 		638CE7582163BF7B00A2CFA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = ../Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		638CE7592163BF7B00A2CFA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = ../Base.lproj/PBAddRemoteSheet.xib; sourceTree = "<group>"; };
 		638CE75A2163BF7B00A2CFA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = ../Base.lproj/PBCloneRepositoryPanel.xib; sourceTree = "<group>"; };
 		638CE75B2163BF7C00A2CFA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = ../Base.lproj/PBCreateBranchSheet.xib; sourceTree = "<group>"; };
 		638CE75C2163BF7C00A2CFA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = ../Base.lproj/PBCreateTagSheet.xib; sourceTree = "<group>"; };
@@ -409,7 +400,6 @@
 		978357AC189C074500ADC689 /* TagTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = TagTemplate.pdf; sourceTree = "<group>"; };
 		978357B2189C19A000ADC689 /* AddBranchTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = AddBranchTemplate.pdf; sourceTree = "<group>"; };
 		978357B3189C19A000ADC689 /* AddLabelTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = AddLabelTemplate.pdf; sourceTree = "<group>"; };
-		978357B4189C19A000ADC689 /* AddRemoteTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = AddRemoteTemplate.pdf; sourceTree = "<group>"; };
 		978357B5189C19A000ADC689 /* FetchTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = FetchTemplate.pdf; sourceTree = "<group>"; };
 		978357B6189C19A000ADC689 /* PullTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = PullTemplate.pdf; sourceTree = "<group>"; };
 		978357B7189C19A000ADC689 /* PushTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = PushTemplate.pdf; sourceTree = "<group>"; };
@@ -550,7 +540,6 @@
 				978357C6189C23AF00ADC689 /* TreeViewTemplate.pdf */,
 				978357B2189C19A000ADC689 /* AddBranchTemplate.pdf */,
 				978357B3189C19A000ADC689 /* AddLabelTemplate.pdf */,
-				978357B4189C19A000ADC689 /* AddRemoteTemplate.pdf */,
 				978357A8189C074500ADC689 /* BranchTemplate.pdf */,
 				978357BE189C1F5700ADC689 /* CherryPickTemplate.pdf */,
 				978357C4189C238300ADC689 /* DetailViewTemplate.pdf */,
@@ -590,7 +579,6 @@
 			children = (
 				4A5D760314A9A99E00DF6C68 /* InfoPlist.strings */,
 				4A5D760514A9A99E00DF6C68 /* MainMenu.xib */,
-				4A5D760714A9A99E00DF6C68 /* PBAddRemoteSheet.xib */,
 				4A5D760914A9A99E00DF6C68 /* PBCloneRepositoryPanel.xib */,
 				4A5D760D14A9A99E00DF6C68 /* PBCreateBranchSheet.xib */,
 				4A5D760F14A9A99E00DF6C68 /* PBCreateTagSheet.xib */,
@@ -683,8 +671,6 @@
 				4A5D764F14A9A9CC00DF6C68 /* PBGitBinary.m */,
 				4A5D765014A9A9CC00DF6C68 /* PBGitCommit.h */,
 				4A5D765114A9A9CC00DF6C68 /* PBGitCommit.m */,
-				4A5D765414A9A9CC00DF6C68 /* PBGitDefaults.h */,
-				4A5D765514A9A9CC00DF6C68 /* PBGitDefaults.m */,
 				4A5D765614A9A9CC00DF6C68 /* PBGitGrapher.h */,
 				4A5D765714A9A9CC00DF6C68 /* PBGitGrapher.mm */,
 				4A5D765814A9A9CC00DF6C68 /* PBGitGraphLine.h */,
@@ -782,8 +768,6 @@
 				BF42F1321E025403004769FF /* GitXTextView.m */,
 				4A5D76B614A9A9CC00DF6C68 /* GLFileView.h */,
 				4A5D76B714A9A9CC00DF6C68 /* GLFileView.m */,
-				4A5D76B814A9A9CC00DF6C68 /* PBAddRemoteSheet.h */,
-				4A5D76B914A9A9CC00DF6C68 /* PBAddRemoteSheet.m */,
 				4A5D76C014A9A9CC00DF6C68 /* PBCommitHookFailedSheet.h */,
 				4A5D76C114A9A9CC00DF6C68 /* PBCommitHookFailedSheet.m */,
 				4A5D76C214A9A9CC00DF6C68 /* PBCommitMessageView.h */,
@@ -920,7 +904,6 @@
 				978357B0189C074500ADC689 /* StageTemplate.pdf in Resources */,
 				4A5D75DE14A9A90500DF6C68 /* mainSplitterBar.tiff in Resources */,
 				4A5D75DF14A9A90500DF6C68 /* mainSplitterDimple.tiff in Resources */,
-				978357BA189C19A000ADC689 /* AddRemoteTemplate.pdf in Resources */,
 				978357C3189C1F5700ADC689 /* RebaseTemplate.pdf in Resources */,
 				4A5D75F114A9A90500DF6C68 /* rewindImage.pdf in Resources */,
 				978357B8189C19A000ADC689 /* AddBranchTemplate.pdf in Resources */,
@@ -940,7 +923,6 @@
 				4A5D761714A9A99E00DF6C68 /* InfoPlist.strings in Resources */,
 				97CF01FA18A6C5BB00E30F2B /* empty_file.pdf in Resources */,
 				4A5D761814A9A99E00DF6C68 /* MainMenu.xib in Resources */,
-				4A5D761914A9A99E00DF6C68 /* PBAddRemoteSheet.xib in Resources */,
 				978357BD189C19A000ADC689 /* PushTemplate.pdf in Resources */,
 				4A5D761A14A9A99E00DF6C68 /* PBCloneRepositoryPanel.xib in Resources */,
 				4A5D761C14A9A99E00DF6C68 /* PBCreateBranchSheet.xib in Resources */,
@@ -1040,7 +1022,6 @@
 				6C25810B1C2720E60080A89A /* GitXCommitCopier.m in Sources */,
 				4A5D76F514A9A9CC00DF6C68 /* PBGitCommit.m in Sources */,
 				6C4855DA1D57E4FA0027A7B4 /* PBOpenShallowRepositoryErrorRecoveryAttempter.m in Sources */,
-				4A5D76F714A9A9CC00DF6C68 /* PBGitDefaults.m in Sources */,
 				4A5D76F814A9A9CC00DF6C68 /* PBGitGrapher.mm in Sources */,
 				4A5D76F914A9A9CC00DF6C68 /* PBGitGraphLine.m in Sources */,
 				4A5D76FA14A9A9CC00DF6C68 /* PBGitHistoryGrapher.m in Sources */,
@@ -1081,7 +1062,6 @@
 				4A5D772314A9A9CC00DF6C68 /* PBEasyPipe.m in Sources */,
 				4A5D772414A9A9CC00DF6C68 /* GitXTextFieldCell.m in Sources */,
 				4A5D772514A9A9CC00DF6C68 /* GLFileView.m in Sources */,
-				4A5D772614A9A9CC00DF6C68 /* PBAddRemoteSheet.m in Sources */,
 				4A5D772A14A9A9CC00DF6C68 /* PBCommitHookFailedSheet.m in Sources */,
 				4A5D772B14A9A9CC00DF6C68 /* PBCommitMessageView.m in Sources */,
 				4A5D772C14A9A9CC00DF6C68 /* PBCreateBranchSheet.m in Sources */,
@@ -1145,14 +1125,6 @@
 				638CE7582163BF7B00A2CFA4 /* Base */,
 			);
 			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		4A5D760714A9A99E00DF6C68 /* PBAddRemoteSheet.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				638CE7592163BF7B00A2CFA4 /* Base */,
-			);
-			name = PBAddRemoteSheet.xib;
 			sourceTree = "<group>";
 		};
 		4A5D760914A9A99E00DF6C68 /* PBCloneRepositoryPanel.xib */ = {
