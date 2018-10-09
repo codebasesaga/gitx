@@ -14,12 +14,9 @@
 #import "PBGitXProtocol.h"
 #import "PBNSURLPathUserDefaultsTransfomer.h"
 #import "PBGitDefaults.h"
-#import "OpenRecentController.h"
 #import "PBGitBinary.h"
 #import "PBGitRepositoryDocument.h"
 #import "PBRepositoryFinder.h"
-
-static OpenRecentController* recentsDialog = nil;
 
 @interface ApplicationController ()
 @end

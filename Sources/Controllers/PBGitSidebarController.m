@@ -60,11 +60,6 @@
 
 	[self menuNeedsUpdate:[actionButton menu]];
 
-	if ([PBGitDefaults showStageView])
-		[self selectStage];
-	else
-		[self selectCurrentBranch];
-
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(expandCollapseItem:) name:NSOutlineViewItemWillExpandNotification object:sourceView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(expandCollapseItem:) name:NSOutlineViewItemWillCollapseNotification object:sourceView];
 

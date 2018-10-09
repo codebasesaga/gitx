@@ -100,8 +100,8 @@ void handleDiffWithArguments(NSURL *repositoryURL, NSArray *arguments)
 {
 	GitXApplication *gitXApp = [SBApplication applicationWithBundleIdentifier:kGitXBundleIdentifier];
 	[gitXApp setSendMode:kAENoReply];
-	[gitXApp activate];
 	[gitXApp performDiffIn:repositoryURL withOptions:arguments];
+	[gitXApp activate];
 	exit(0);
 }
 
@@ -109,8 +109,8 @@ void handleOpenRepository(NSURL *repositoryURL, NSArray *arguments)
 {
     GitXApplication *gitXApp = [SBApplication applicationWithBundleIdentifier:kGitXBundleIdentifier];
 	[gitXApp setSendMode:kAENoReply];
-	[gitXApp activate];
     [gitXApp open:repositoryURL withOptions:arguments];
+	[gitXApp activate];
     return;
 }
 
@@ -174,7 +174,7 @@ void handleGitXSearch(NSURL *repositoryURL, PBHistorySearchMode mode, NSMutableA
 		exit(0);
 
 	GitXApplication *gitXApp = [SBApplication applicationWithBundleIdentifier:kGitXBundleIdentifier];
-	[gitXApp open:[NSArray arrayWithObject:repositoryURL]];
+	[gitXApp open:repositoryURL];
 
 	// need to find the document after opening it
 	GitXDocument *repositoryDocument = documentForURL([gitXApp documents], repositoryURL);
