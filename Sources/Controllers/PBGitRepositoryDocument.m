@@ -51,20 +51,10 @@ NSString *PBGitRepositoryDocumentType = @"Git Repository";
 		return NO;
 	}
 
-
 	return YES;
 }
 
-- (void)close
-{
-	/* FIXME: Check that this deallocs the repo */
-//	[revisionList cleanup];
-
-	[super close];
-}
-
-- (BOOL)isDocumentEdited
-{
+- (BOOL)isDocumentEdited {
 	return NO;
 }
 
@@ -107,8 +97,7 @@ NSString *PBGitRepositoryDocumentType = @"Git Repository";
 	[self showHistoryView:self];
 }
 
-- (void)showWindows
-{
+- (void)showWindows {
 	NSScriptCommand *command = [NSScriptCommand currentCommand];
 
 	if (command) {
@@ -119,10 +108,11 @@ NSString *PBGitRepositoryDocumentType = @"Git Repository";
 		if (repoURL && [repoURL isKindOfClass:[NSURL class]]) {
 			repoURL = [PBRepositoryFinder gitDirForURL:repoURL];
 			if ([repoURL isEqual:_repository.gitURL]) {
-				NSArray *arguments = command.arguments[@"openOptions"];
-				[self handleGitXScriptingArguments:arguments];
+				[self handleGitXScriptingArguments:command.arguments[@"openOptions"]];
 			}
 		}
+	} else {
+		[self showHistoryView:self];
 	}
 
 	[[[self windowController] window] setTitle:[self displayName]];
