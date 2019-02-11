@@ -17,7 +17,7 @@
 // This method is overridden to configure the open panel to only allow
 // selection of directories
 - (void)beginOpenPanel:(NSOpenPanel *)openPanel forTypes:(NSArray<NSString *> *)inTypes completionHandler:(void (^)(NSInteger))completionHandler {
-	[openPanel setCanChooseFiles:YES];
+	[openPanel setCanChooseFiles:NO];
 	[openPanel setCanChooseDirectories:YES];
 	[openPanel setAllowedFileTypes:[NSArray arrayWithObject:@"git"]];
 

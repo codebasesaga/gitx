@@ -12,7 +12,6 @@
 #import "PBGitWindowController.h"
 #import "PBServicesController.h"
 #import "PBGitXProtocol.h"
-#import "PBNSURLPathUserDefaultsTransfomer.h"
 #import "PBGitBinary.h"
 #import "PBGitRepositoryDocument.h"
 #import "PBRepositoryFinder.h"
@@ -31,10 +30,6 @@
 	if (!(self = [super init]))
 		return nil;
 
-	/* Value Transformers */
-	NSValueTransformer *transformer = [PBNSURLPathUserDefaultsTransfomer new];
-	[NSValueTransformer setValueTransformer:transformer forName:@"PBNSURLPathUserDefaultsTransfomer"];
-	
 	started = NO;
 
 	return self;
@@ -102,7 +97,7 @@
 
 //Override the default behavior
 - (IBAction)openDocument:(id)sender {
-	NSOpenPanel* panel = [[NSOpenPanel alloc] init];
+	NSOpenPanel* panel = [NSOpenPanel new];
 	
 	[panel setCanChooseFiles:false];
 	[panel setCanChooseDirectories:true];

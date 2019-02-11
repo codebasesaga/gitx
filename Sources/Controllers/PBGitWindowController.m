@@ -12,16 +12,13 @@
 #import "PBTerminalUtil.h"
 #import "PBCommitHookFailedSheet.h"
 #import "PBGitXMessageSheet.h"
-#import "PBGitSidebarController.h"
 #import "PBCreateBranchSheet.h"
 #import "PBCreateTagSheet.h"
-#import "PBSourceViewItem.h"
 #import "PBGitRevSpecifier.h"
 #import "PBGitRef.h"
 #import "PBError.h"
 #import "PBRepositoryDocumentController.h"
 #import "PBGitRepositoryDocument.h"
-#import "PBRemoteProgressSheet.h"
 #import "PBDiffWindowController.h"
 #import "PBGitStash.h"
 #import "PBGitCommit.h"
@@ -57,9 +54,6 @@
 - (void)windowWillClose:(NSNotification *)notification
 {
 //	NSLog(@"Window will close!");
-
-	if (sidebarController)
-		[sidebarController closeView];
 
 	[self.historyViewController closeView];
 	[self.commitViewController closeView];
@@ -114,13 +108,8 @@
 	[[self window] setFrameUsingName:@"GitX"];
 	[[self window] setRepresentedURL:self.repository.workingDirectoryURL];
 
-	sidebarController = [[PBGitSidebarController alloc] initWithRepository:self.repository superController:self];
 	_historyViewController = [[PBGitHistoryController alloc] initWithRepository:self.repository superController:self];
 	_commitViewController = [[PBGitCommitController alloc] initWithRepository:self.repository superController:self];
-
-	[[sidebarController view] setFrame:[sourceSplitView bounds]];
-	[sourceSplitView addSubview:[sidebarController view]];
-	[sourceListControlsView addSubview:sidebarController.sourceListControlsView];
 
 	[[statusField cell] setBackgroundStyle:NSBackgroundStyleRaised];
 	[progressIndicator setUsesThreadedAnimation:YES];
